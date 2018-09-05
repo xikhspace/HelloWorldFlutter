@@ -20,23 +20,13 @@ class DetailActivityState extends State<DetailActivityWidget> {
         onTap: onTabTapped,
         currentIndex: _currentIndex,
         items: [
-          BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              title: Text('Home')
-          ),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.mail),
-              title: Text('Mail')
-          ),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.person),
-              title: Text('Profile')
-          )
+          BottomNavigationBarItem(icon: Icon(Icons.home), title: Text('Home')),
+          BottomNavigationBarItem(icon: Icon(Icons.mail), title: Text('Mail')),
+          BottomNavigationBarItem(icon: Icon(Icons.person), title: Text('Profile'))
         ],
       ),
     );
   }
-
 
   void onTabTapped(int index) {
     setState(() {

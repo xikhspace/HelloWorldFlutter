@@ -34,9 +34,7 @@ class MainActivityState extends State<MainActivityWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(
-          child: Text(widget.title),
-        ),
+        title: Text(widget.title),
       ),
       floatingActionButton: FloatingActionButton(
         tooltip: 'Increment',
