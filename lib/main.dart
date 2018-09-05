@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'detail_widget.dart';
 
 void main() => runApp(new MyApp());
 
@@ -15,27 +16,6 @@ class MyApp extends StatelessWidget {
       routes: <String, WidgetBuilder>{
         '/detail': (BuildContext context) => DetailActivityWidget(),
       },
-    );
-  }
-}
-
-class DetailActivityWidget extends StatefulWidget {
-  @override
-  State<StatefulWidget> createState() {
-    return DetailActivityState();
-  }
-}
-
-class DetailActivityState extends State<DetailActivityWidget> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Im other Screen"),
-      ),
-      body: Center(
-        child: Text("Hello again Flutter Perú"),
-      ),
     );
   }
 }
@@ -73,6 +53,7 @@ class MainActivityState extends State<MainActivityWidget> {
       ),
       drawer: Drawer(
           child: ListView(
+        padding: const EdgeInsets.all(0.0),
         shrinkWrap: true,
         children: <Widget>[
           UserAccountsDrawerHeader(
