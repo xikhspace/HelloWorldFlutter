@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:ui';
+import 'dart:math';
 
 class DetailActivityWidget extends StatefulWidget {
   @override
@@ -12,10 +13,17 @@ class androi3d extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     var rect = Offset.zero & size;
-    // TOOD: change background 
-    var paint = Paint();
-    // TODO: Attributes may be redundant
-    canvas.drawRect(rect, paint);
+    var paint = Paint()
+      ..color = new Color('0x073350') // rgb(7, 33, 50)
+      ..style = PaintingStyle.fill;
+    
+    canvas.save();
+    canvas.translate(430.0/2, 430.0/2);
+    canvas.translate(0.0, 0.0);
+    canvas.scale(1, 1);
+    canvas.drawArc(rect, 0, math.PI*2, paint);
+    //canvas.drawRect(rect, paint);
+      
   }
   
   @override
@@ -23,7 +31,7 @@ class androi3d extends CustomPainter {
     return (Size size) {
       
       var rect = Offset.zero & size;
-      var width = size.width;
+      var width = 430;
       // TODO : Draw Object
       // rect = buildObject();
       return [
