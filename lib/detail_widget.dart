@@ -1,10 +1,46 @@
 import 'package:flutter/material.dart';
+import 'dart:ui';
 
 class DetailActivityWidget extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
     return DetailActivityState();
   }
+}
+
+class androi3d extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    var rect = Offset.zero & size;
+    // TOOD: change background 
+    var paint = Paint();
+    // TODO: Attributes may be redundant
+    canvas.drawRect(rect, paint);
+  }
+  
+  @override
+  SemanticsBuilderCallback get semanticsBuilder {
+    return (Size size) {
+      
+      var rect = Offset.zero & size;
+      var width = size.width;
+      // TODO : Draw Object
+      // rect = buildObject();
+      return [
+        CustomPainterSemantics(
+          rect: rect,
+          properties: SemanticsProperties(
+            label: 'androi3d',
+            textDirection: TextDirection.ltr,
+          ),
+        ),
+      ];
+  }
+    
+  @override
+  bool shouldRepaint(Sky oldDelegate) => false;
+  @override
+  bool shouldRebuildSemantics(Sky oldDelegate) => false;
 }
 
 class DetailActivityState extends State<DetailActivityWidget> {
